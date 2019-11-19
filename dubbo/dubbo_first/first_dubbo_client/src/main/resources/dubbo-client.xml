@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans        http://www.springframework.org/schema/beans/spring-beans.xsd        http://code.alibabatech.com/schema/dubbo        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+<!--提供方信息-->
+    <dubbo:application name="first-dubbo-server" owner="lumot"/>
+
+<!--    注册中心-->
+   <dubbo:registry address="N/A" />
+
+<!--    RPC协议-->
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <dubbo:service interface="com.lumor.dubbo.ILoginService" ref="loginService" />
+
+    <bean id="loginService" class="com.lumor.dubbo.LoginService"></bean>
+
+</beans>
